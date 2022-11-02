@@ -1,4 +1,5 @@
 ﻿using bytebank_ADM.Funcionarios;
+using bytebank_ADM.SistemaInterno;
 using bytebank_ADM.Utilitario;
 
 #region Comentario
@@ -28,6 +29,7 @@ Console.WriteLine("Total de funcionários: " + Funcionario.TotalDeFuncionarios);
 #endregion Comentario
 
 CalcularBonificacao();
+UsarSistema();
 
 void CalcularBonificacao()
 {
@@ -36,13 +38,13 @@ void CalcularBonificacao()
     Designer scruton = new Designer("45632");
     scruton.Nome = "Roger Scruton";
 
-    Diretor rand = new Diretor("3463426");
+    Diretor rand = new Diretor("3463426", "ayn.rand", "123");
     rand.Nome = "Ayn Rand";
 
     Auxiliar bastiat = new Auxiliar("436723435");
     bastiat.Nome = "Frederic Bastiat";
 
-    GerenteDeContas sowell = new GerenteDeContas("63442425");
+    GerenteDeContas sowell = new GerenteDeContas("63442425", "tom.sowell", "987");
     sowell.Nome = "Thomas Sowell";
 
     gerenciador.Registrar(scruton);
@@ -52,4 +54,22 @@ void CalcularBonificacao()
 
     Console.WriteLine("Total de funcionários: " + Designer.TotalDeFuncionarios);
     Console.WriteLine("Total de bonificações: " + gerenciador.totalBonificacao);
+}
+
+void UsarSistema()
+{
+    SistemaInterno sistema = new SistemaInterno();
+    Diretor otomo = new Diretor("56345234", "otomo", "123");
+    otomo.Nome = "Katsuhiro Otomo";
+
+    GerenteDeContas shinkai = new GerenteDeContas("3264575", "makoto.s", "321");
+    shinkai.Nome = "Makoto Shinkai";
+
+    Auxiliar paulo = new Auxiliar("6654133");
+    shinkai.Nome = "Paulo";
+    shinkai.Senha = "098";
+
+    sistema.Logar(otomo, "otomo", "123");
+    sistema.Logar(shinkai, "makoto.s", "456");
+    //sistema.Logar(paulo, "567");
 }
