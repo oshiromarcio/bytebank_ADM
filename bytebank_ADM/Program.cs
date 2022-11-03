@@ -1,4 +1,5 @@
 ﻿using bytebank_ADM.Funcionarios;
+using bytebank_ADM.Parceria;
 using bytebank_ADM.SistemaInterno;
 using bytebank_ADM.Utilitario;
 
@@ -65,11 +66,9 @@ void UsarSistema()
     GerenteDeContas shinkai = new GerenteDeContas("3264575", "makoto.s", "321");
     shinkai.Nome = "Makoto Shinkai";
 
-    Auxiliar paulo = new Auxiliar("6654133");
-    shinkai.Nome = "Paulo";
-    shinkai.Senha = "098";
+    ParceiroComercial diego = new ParceiroComercial("diego", "345");
 
-    sistema.Logar(otomo, "otomo", "123");
-    sistema.Logar(shinkai, "makoto.s", "456");
-    //sistema.Logar(paulo, "567");
+    sistema.Logar(otomo, "otomo", "654");
+    sistema.Logar(shinkai, "makoto.s", "321");
+    sistema.Logar(diego, "diego", "345");
 }

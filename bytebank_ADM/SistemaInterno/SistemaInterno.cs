@@ -9,12 +9,12 @@ namespace bytebank_ADM.SistemaInterno
 {
     public class SistemaInterno
     {
-        public bool Logar(Autenticavel funcionarioAutenticavel, string login, string senha)
+        public bool Logar(IAutenticavel funcionarioAutenticavel, string login, string senha)
         {
             bool usuarioAutenticado = funcionarioAutenticavel.Autenticar(login, senha);
             if (usuarioAutenticado)
             {
-                Console.WriteLine("Bem-vindo ao nosso sistema " + funcionarioAutenticavel.Nome + "!");
+                Console.WriteLine("Bem-vindo ao nosso sistema " + login + "!");
                 return true;
             }
             else

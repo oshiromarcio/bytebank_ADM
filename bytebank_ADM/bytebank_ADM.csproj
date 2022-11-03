@@ -7,4 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Parceria\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Parceria\" />
+  </ItemGroup>
 </Project>

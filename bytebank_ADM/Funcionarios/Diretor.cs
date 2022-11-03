@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 
 namespace bytebank_ADM.Funcionarios
 {
-    public class Diretor : Autenticavel
+    public class Diretor : FuncionarioAutenticavel
     {
         public Diretor(string cpf, string login, string senha) : base(cpf, 5000, login, senha)
         {
-
         }
 
         public override double GetBonificacao()

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using bytebank_ADM.Utilitario;
 
 namespace bytebank_ADM.Funcionarios
 {
-    public abstract class Funcionario
+    public abstract class Funcionario : ICalcularBonificacao
     {
         public string? Nome { get; set; }
         public string Cpf { get; private set; }
@@ -21,9 +22,9 @@ namespace bytebank_ADM.Funcionarios
             TotalDeFuncionarios++;
         }
 
-        public abstract double GetBonificacao();
-
         public abstract void AumentarSalario();
+
+        public abstract double GetBonificacao();
 
         // Garbage Collector: É como o construtor, mas iniciando com ~
         ~Funcionario()
